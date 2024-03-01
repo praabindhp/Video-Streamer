@@ -6,7 +6,7 @@ const port = process.env.PORT;
 
 app.get('/video', (req, res) => {
     // Get video path from request or stored location
-    const videoPath = 'path/to/your/video.mp4';
+    const videoPath = "./videos/anime.mp4";
 
     // Check if video exists
     if (!fs.existsSync(videoPath)) {
@@ -43,7 +43,7 @@ app.get('/video', (req, res) => {
 
     // Handle errors during streaming
     stream.on('error', (err) => {
-        res.status(500).send('Error Streaming Video');
+        res.status(500).send('Error Streaming 🎥 Video');
     });
 });
 
