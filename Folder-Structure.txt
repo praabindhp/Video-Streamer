@@ -1,8 +1,7 @@
 project_root/
   ├── package.json          # Project dependencies and metadata
-  ├── app.js                # Main server-side application logic
-  ├── public/               # Publicly accessible files
-  │   ├── index.html        # HTML template for the video player
-  │   └── script.js         # Client-side JavaScript code
+  ├── server.js                # Main server-side application logic
+  ├── index.html        # HTML template for the video player
+  ├── script.js         # Client-side JavaScript code
   └── videos/               # Directory to store video files
       └── your_video.mp4    # Example video filename
