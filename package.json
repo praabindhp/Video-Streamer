@@ -1,0 +1,15 @@
+{
+  "name": "video-streamer",
+  "version": "1.0.0",
+  "description": "Stores The Progress And Resumes The Watching Video",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Praabindh Pradeep",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "fs": "^0.0.1-security"
+  }
+}
