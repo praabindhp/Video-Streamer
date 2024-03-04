@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Streamer</title>
-    <script src="./script.js"></script>
-  </head>
+<html>
   <body>
-    <video id="videoPlayer" controls>
+    <video id="videoPlayer" controls autoplay>
       <source src="/video" type="video/mp4">
     </video>
-    <script></script>
+    <script>
+  const videoPlayer = document.getElementById('videoPlayer');
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('user') || 'praabindh';
+
+  fetch(`/progress/${userId}`)
+    .then(response => response.json())
+    .then(data => {
+      videoPlayer.currentTime = data.progress;
+    });
+
+  videoPlayer.ontimeupdate = () => {
+    fetch('/progress', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user: userId, progress: videoPlayer.currentTime }),
+    });
+  };
+</script>
   </body>
 </html>

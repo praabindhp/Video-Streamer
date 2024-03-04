@@ -49,5 +49,5 @@ app.get('/', function (req, res) {
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {
-    console.log(`Praabindh's Server ⚓ Is Running On Port ~ ${port}`)
+    console.log(`Praabindh's Server ⚓ Is Running On Port ~ ${port}!`)
 });
